@@ -12,6 +12,7 @@
 		314DFA33180B2CFA007C9015 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA30180B2CFA007C9015 /* Default-568h@2x.png */; };
 		314DFA34180B2CFA007C9015 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA31180B2CFA007C9015 /* Default.png */; };
 		314DFA35180B2CFA007C9015 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA32180B2CFA007C9015 /* Default@2x.png */; };
+		314DFA3B180B323D007C9015 /* SHZTagsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA3A180B323D007C9015 /* SHZTagsDataSource.m */; };
 		319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
 		319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
 		319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0677180B2ABC00943567 /* CoreGraphics.framework */; };
@@ -44,6 +45,8 @@
 		314DFA30180B2CFA007C9015 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		314DFA31180B2CFA007C9015 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		314DFA32180B2CFA007C9015 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		314DFA39180B323D007C9015 /* SHZTagsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHZTagsDataSource.h; sourceTree = "<group>"; };
+		314DFA3A180B323D007C9015 /* SHZTagsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHZTagsDataSource.m; sourceTree = "<group>"; };
 		319F0670180B2ABC00943567 /* ShazamTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319F0673180B2ABC00943567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		319F0675180B2ABC00943567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,7 @@
 			children = (
 				314DFA37180B2DBC007C9015 /* AppDelegate */,
 				314DFA38180B2DC3007C9015 /* View Controllers */,
+				314DFA3C180B3240007C9015 /* Model */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -130,6 +134,15 @@
 				314DFA2C180B2CE2007C9015 /* SHZViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		314DFA3C180B3240007C9015 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				314DFA39180B323D007C9015 /* SHZTagsDataSource.h */,
+				314DFA3A180B323D007C9015 /* SHZTagsDataSource.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		319F0667180B2ABC00943567 = {
@@ -318,6 +331,7 @@
 				319F0680180B2ABC00943567 /* main.m in Sources */,
 				314DFA2D180B2CE2007C9015 /* SHZAppDelegate.m in Sources */,
 				314DFA2E180B2CE2007C9015 /* SHZViewController.m in Sources */,
+				314DFA3B180B323D007C9015 /* SHZTagsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
