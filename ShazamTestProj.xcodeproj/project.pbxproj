@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
+		319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
+		319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0677180B2ABC00943567 /* CoreGraphics.framework */; };
+		319F067E180B2ABC00943567 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 319F067C180B2ABC00943567 /* InfoPlist.strings */; };
+		319F0680180B2ABC00943567 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F067F180B2ABC00943567 /* main.m */; };
+		319F0684180B2ABC00943567 /* SHZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F0683180B2ABC00943567 /* SHZAppDelegate.m */; };
+		319F0686180B2ABC00943567 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 319F0685180B2ABC00943567 /* Default.png */; };
+		319F0688180B2ABC00943567 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 319F0687180B2ABC00943567 /* Default@2x.png */; };
+		319F068A180B2ABC00943567 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 319F0689180B2ABC00943567 /* Default-568h@2x.png */; };
+		319F068D180B2ABC00943567 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 319F068B180B2ABC00943567 /* MainStoryboard_iPhone.storyboard */; };
+		319F0690180B2ABC00943567 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 319F068E180B2ABC00943567 /* MainStoryboard_iPad.storyboard */; };
+		319F0693180B2ABC00943567 /* SHZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F0692180B2ABC00943567 /* SHZViewController.m */; };
+		319F069B180B2ABD00943567 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F069A180B2ABD00943567 /* SenTestingKit.framework */; };
+		319F069C180B2ABD00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
+		319F069D180B2ABD00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
+		319F06A5180B2ABD00943567 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 319F06A3180B2ABD00943567 /* InfoPlist.strings */; };
+		319F06A8180B2ABD00943567 /* ShazamTestProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F06A7180B2ABD00943567 /* ShazamTestProjTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		319F069E180B2ABD00943567 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319F0668180B2ABC00943567 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 319F066F180B2ABC00943567;
+			remoteInfo = ShazamTestProj;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		319F0670180B2ABC00943567 /* ShazamTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		319F0673180B2ABC00943567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		319F0675180B2ABC00943567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		319F0677180B2ABC00943567 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		319F067B180B2ABC00943567 /* ShazamTestProj-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShazamTestProj-Info.plist"; sourceTree = "<group>"; };
+		319F067D180B2ABC00943567 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		319F067F180B2ABC00943567 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		319F0681180B2ABC00943567 /* ShazamTestProj-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShazamTestProj-Prefix.pch"; sourceTree = "<group>"; };
+		319F0682180B2ABC00943567 /* SHZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHZAppDelegate.h; sourceTree = "<group>"; };
+		319F0683180B2ABC00943567 /* SHZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHZAppDelegate.m; sourceTree = "<group>"; };
+		319F0685180B2ABC00943567 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		319F0687180B2ABC00943567 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		319F0689180B2ABC00943567 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		319F068C180B2ABC00943567 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		319F068F180B2ABC00943567 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		319F0691180B2ABC00943567 /* SHZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHZViewController.h; sourceTree = "<group>"; };
+		319F0692180B2ABC00943567 /* SHZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHZViewController.m; sourceTree = "<group>"; };
+		319F0699180B2ABD00943567 /* ShazamTestProjTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShazamTestProjTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		319F069A180B2ABD00943567 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		319F06A2180B2ABD00943567 /* ShazamTestProjTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShazamTestProjTests-Info.plist"; sourceTree = "<group>"; };
+		319F06A4180B2ABD00943567 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		319F06A6180B2ABD00943567 /* ShazamTestProjTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShazamTestProjTests.h; sourceTree = "<group>"; };
+		319F06A7180B2ABD00943567 /* ShazamTestProjTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShazamTestProjTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		319F066D180B2ABC00943567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */,
+				319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */,
+				319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319F0695180B2ABD00943567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F069B180B2ABD00943567 /* SenTestingKit.framework in Frameworks */,
+				319F069C180B2ABD00943567 /* UIKit.framework in Frameworks */,
+				319F069D180B2ABD00943567 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		319F0667180B2ABC00943567 = {
+			isa = PBXGroup;
+			children = (
+				319F0679180B2ABC00943567 /* ShazamTestProj */,
+				319F06A0180B2ABD00943567 /* ShazamTestProjTests */,
+				319F0672180B2ABC00943567 /* Frameworks */,
+				319F0671180B2ABC00943567 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		319F0671180B2ABC00943567 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				319F0670180B2ABC00943567 /* ShazamTestProj.app */,
+				319F0699180B2ABD00943567 /* ShazamTestProjTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		319F0672180B2ABC00943567 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				319F0673180B2ABC00943567 /* UIKit.framework */,
+				319F0675180B2ABC00943567 /* Foundation.framework */,
+				319F0677180B2ABC00943567 /* CoreGraphics.framework */,
+				319F069A180B2ABD00943567 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		319F0679180B2ABC00943567 /* ShazamTestProj */ = {
+			isa = PBXGroup;
+			children = (
+				319F0682180B2ABC00943567 /* SHZAppDelegate.h */,
+				319F0683180B2ABC00943567 /* SHZAppDelegate.m */,
+				319F068B180B2ABC00943567 /* MainStoryboard_iPhone.storyboard */,
+				319F068E180B2ABC00943567 /* MainStoryboard_iPad.storyboard */,
+				319F0691180B2ABC00943567 /* SHZViewController.h */,
+				319F0692180B2ABC00943567 /* SHZViewController.m */,
+				319F067A180B2ABC00943567 /* Supporting Files */,
+			);
+			path = ShazamTestProj;
+			sourceTree = "<group>";
+		};
+		319F067A180B2ABC00943567 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				319F067B180B2ABC00943567 /* ShazamTestProj-Info.plist */,
+				319F067C180B2ABC00943567 /* InfoPlist.strings */,
+				319F067F180B2ABC00943567 /* main.m */,
+				319F0681180B2ABC00943567 /* ShazamTestProj-Prefix.pch */,
+				319F0685180B2ABC00943567 /* Default.png */,
+				319F0687180B2ABC00943567 /* Default@2x.png */,
+				319F0689180B2ABC00943567 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		319F06A0180B2ABD00943567 /* ShazamTestProjTests */ = {
+			isa = PBXGroup;
+			children = (
+				319F06A6180B2ABD00943567 /* ShazamTestProjTests.h */,
+				319F06A7180B2ABD00943567 /* ShazamTestProjTests.m */,
+				319F06A1180B2ABD00943567 /* Supporting Files */,
+			);
+			path = ShazamTestProjTests;
+			sourceTree = "<group>";
+		};
+		319F06A1180B2ABD00943567 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				319F06A2180B2ABD00943567 /* ShazamTestProjTests-Info.plist */,
+				319F06A3180B2ABD00943567 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		319F066F180B2ABC00943567 /* ShazamTestProj */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 319F06AB180B2ABD00943567 /* Build configuration list for PBXNativeTarget "ShazamTestProj" */;
+			buildPhases = (
+				319F066C180B2ABC00943567 /* Sources */,
+				319F066D180B2ABC00943567 /* Frameworks */,
+				319F066E180B2ABC00943567 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShazamTestProj;
+			productName = ShazamTestProj;
+			productReference = 319F0670180B2ABC00943567 /* ShazamTestProj.app */;
+			productType = "com.apple.product-type.application";
+		};
+		319F0698180B2ABD00943567 /* ShazamTestProjTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 319F06AE180B2ABD00943567 /* Build configuration list for PBXNativeTarget "ShazamTestProjTests" */;
+			buildPhases = (
+				319F0694180B2ABD00943567 /* Sources */,
+				319F0695180B2ABD00943567 /* Frameworks */,
+				319F0696180B2ABD00943567 /* Resources */,
+				319F0697180B2ABD00943567 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				319F069F180B2ABD00943567 /* PBXTargetDependency */,
+			);
+			name = ShazamTestProjTests;
+			productName = ShazamTestProjTests;
+			productReference = 319F0699180B2ABD00943567 /* ShazamTestProjTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		319F0668180B2ABC00943567 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SHZ;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Wyszo;
+			};
+			buildConfigurationList = 319F066B180B2ABC00943567 /* Build configuration list for PBXProject "ShazamTestProj" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 319F0667180B2ABC00943567;
+			productRefGroup = 319F0671180B2ABC00943567 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				319F066F180B2ABC00943567 /* ShazamTestProj */,
+				319F0698180B2ABD00943567 /* ShazamTestProjTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		319F066E180B2ABC00943567 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F067E180B2ABC00943567 /* InfoPlist.strings in Resources */,
+				319F0686180B2ABC00943567 /* Default.png in Resources */,
+				319F0688180B2ABC00943567 /* Default@2x.png in Resources */,
+				319F068A180B2ABC00943567 /* Default-568h@2x.png in Resources */,
+				319F068D180B2ABC00943567 /* MainStoryboard_iPhone.storyboard in Resources */,
+				319F0690180B2ABC00943567 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319F0696180B2ABD00943567 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F06A5180B2ABD00943567 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		319F0697180B2ABD00943567 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		319F066C180B2ABC00943567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F0680180B2ABC00943567 /* main.m in Sources */,
+				319F0684180B2ABC00943567 /* SHZAppDelegate.m in Sources */,
+				319F0693180B2ABC00943567 /* SHZViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319F0694180B2ABD00943567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319F06A8180B2ABD00943567 /* ShazamTestProjTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		319F069F180B2ABD00943567 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 319F066F180B2ABC00943567 /* ShazamTestProj */;
+			targetProxy = 319F069E180B2ABD00943567 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		319F067C180B2ABC00943567 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				319F067D180B2ABC00943567 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		319F068B180B2ABC00943567 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				319F068C180B2ABC00943567 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		319F068E180B2ABC00943567 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				319F068F180B2ABC00943567 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		319F06A3180B2ABD00943567 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				319F06A4180B2ABD00943567 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		319F06A9180B2ABD00943567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		319F06AA180B2ABD00943567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		319F06AC180B2ABD00943567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShazamTestProj/ShazamTestProj-Prefix.pch";
+				INFOPLIST_FILE = "ShazamTestProj/ShazamTestProj-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		319F06AD180B2ABD00943567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShazamTestProj/ShazamTestProj-Prefix.pch";
+				INFOPLIST_FILE = "ShazamTestProj/ShazamTestProj-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		319F06AF180B2ABD00943567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShazamTestProj.app/ShazamTestProj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShazamTestProj/ShazamTestProj-Prefix.pch";
+				INFOPLIST_FILE = "ShazamTestProjTests/ShazamTestProjTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		319F06B0180B2ABD00943567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShazamTestProj.app/ShazamTestProj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShazamTestProj/ShazamTestProj-Prefix.pch";
+				INFOPLIST_FILE = "ShazamTestProjTests/ShazamTestProjTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		319F066B180B2ABC00943567 /* Build configuration list for PBXProject "ShazamTestProj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				319F06A9180B2ABD00943567 /* Debug */,
+				319F06AA180B2ABD00943567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		319F06AB180B2ABD00943567 /* Build configuration list for PBXNativeTarget "ShazamTestProj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				319F06AC180B2ABD00943567 /* Debug */,
+				319F06AD180B2ABD00943567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		319F06AE180B2ABD00943567 /* Build configuration list for PBXNativeTarget "ShazamTestProjTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				319F06AF180B2ABD00943567 /* Debug */,
+				319F06B0180B2ABD00943567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 319F0668180B2ABC00943567 /* Project object */;
+}
