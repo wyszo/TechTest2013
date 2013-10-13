@@ -8,9 +8,12 @@
 
 #import "SHZViewController.h"
 
-@interface SHZViewController ()
+@interface SHZViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tagsTableView;
 
 @end
+
 
 @implementation SHZViewController
 
@@ -23,5 +26,27 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+
+#pragma mark - TableView DataSource
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return 0;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    return nil;
+}
+
+
+#pragma mark - TableView Delegate
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    // TODO: bring up a corresponding webpage
+}
+
 
 @end
