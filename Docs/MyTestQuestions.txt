@@ -1,0 +1,13 @@
+My questions: 
+- what type of memory management should I use? MRC or ARC? 
+- what's the deployment target? Can I go iOS7 only? 
+- am I allowed to use external RSS reading library or should I rely on XML parsing? 
+- should I use native XML parsing abilities or rather custom XML parsing library? 
+- am I allowed to use custom library for network requests or should I use the native one? 
+- should I write unit tests for the project? 
+- should I write unit tests first? 
+- should I use default or external library (kiwi?) for unit testing? 
+- should I also include behavioral testing?
+- should the app be targeted for iPhone/iPad/both? 
+- should I use storyboards or rather xibs (or maybe layout interface programmatically)? 
+- should the app store cached RSS data from earlier application launches?
