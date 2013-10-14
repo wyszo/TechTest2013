@@ -27,8 +27,8 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
     // TODO: Not implemented yet
     
     // for testing
-    [self fillTagsWithTestDataCompletion:completionBlock];
-//    [self fillTagsWithTestFile1DataCompletion:completionBlock];
+//    [self fillTagsWithTestDataCompletion:completionBlock];
+    [self fillTagsWithTestFile1DataCompletion:completionBlock];
 }
 
 - (void) fillTagsWithTestDataCompletion:(fetchTagsCompletionBlock)completionBlock {

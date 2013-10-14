@@ -7,6 +7,7 @@
 //
 
 #import "SHZRSSItem.h"
+#import "NSString+Common.h"
 
 
 @interface SHZRSSItem ()
@@ -37,6 +38,22 @@
 + (id) rssItemWithTitle:(NSString *)title trackName:(NSString *)trackName trackArtist:(NSString *)trackArtist link:(NSString *)link {
 
     return [[self alloc] initWithTitle:title trackName:trackName trackArtist:trackArtist link:link];
+}
+
+
+#pragma mark - Accessors
+
+- (void) setLink:(NSString *)link {
+    
+    if ([link isEqualToString:_link] == NO) {
+        
+        NSString *processedLink = link;
+        if (processedLink.length > 0) {
+            processedLink = [processedLink stringByRemovingNewlineCharacters];
+        }
+        
+        _link = processedLink;
+    }
 }
 
 @end
