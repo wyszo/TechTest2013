@@ -9,7 +9,7 @@
 #import "SHZViewController.h"
 #import "SHZTagsDataSource.h"
 #import "UIImage+CommonImages.h"
-#import "SHZRSSItem.h"
+#import "NSArray+RSSItemCollection.h"
 #import "SHZWebViewController.h"
 
 static NSString *const kViewTitle = @"Shazam tags";
@@ -76,11 +76,11 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 }
 
 
-#pragma mark - TableViewCell Customisation
+#pragma mark - TableViewCell Customization
 
 - (void) configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     
-    SHZRSSItem *rssItem = [self rssItemForIndexPath:indexPath];
+    SHZRSSItem *rssItem = [_tagsDataSource.tags rssItemForIndex:indexPath.row];
     
     if (rssItem) {
         cell.textLabel.text = rssItem.title;
@@ -88,32 +88,6 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     }
     
     cell.imageView.image = [UIImage feedIcon];
-}
-
-- (SHZRSSItem *) rssItemForIndexPath:(NSIndexPath *)indexPath {
-    
-    SHZRSSItem *rssItem = nil;
-    
-    if ([_tagsDataSource.tags count] > indexPath.row) {
-        
-        id dataSourceObject = _tagsDataSource.tags[indexPath.row];
-        
-        if ([dataSourceObject isKindOfClass:[SHZRSSItem class]] == NO) {
-            DLog(@"Unexpected DataSource object class!");
-        }
-        else {
-            rssItem = (SHZRSSItem *)dataSourceObject;
-        }
-    }
-    return rssItem;
-}
-
-- (NSString *) urlFromRSSItemForIndexPath:(NSIndexPath *)indexPath {
-    
-    SHZRSSItem *rssItem = [self rssItemForIndexPath:indexPath];
-    NSString *url = rssItem.link;
-    
-    return url;
 }
 
 
@@ -124,7 +98,7 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     _lastSelectedIndexPath = indexPath;
 
-    if ([self urlFromRSSItemForIndexPath:indexPath].length > 0) {
+    if ([_tagsDataSource.tags urlFromRSSItemForIndex:indexPath.row].length > 0) {
         [self performSegueWithIdentifier:kWebViewSegueIdentifier sender:self];
     }
 }
@@ -139,7 +113,7 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     if ([segue.destinationViewController isKindOfClass:[SHZWebViewController class]]) {
         
         SHZWebViewController *webViewController = (SHZWebViewController *)segue.destinationViewController;
-        webViewController.url = [self urlFromRSSItemForIndexPath:_lastSelectedIndexPath];
+        webViewController.url = [_tagsDataSource.tags urlFromRSSItemForIndex:_lastSelectedIndexPath.row];
     }
 }
 

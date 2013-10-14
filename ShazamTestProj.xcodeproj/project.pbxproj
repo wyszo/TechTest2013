@@ -26,6 +26,7 @@
 		314DFA5E180BCB75007C9015 /* SHZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA5D180BCB75007C9015 /* SHZWebViewController.m */; };
 		314DFA61180BD233007C9015 /* SHZNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA60180BD232007C9015 /* SHZNetworkManager.m */; };
 		314DFA65180BD6E2007C9015 /* NSURLRequest+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA64180BD6E2007C9015 /* NSURLRequest+Common.m */; };
+		314DFA68180CB935007C9015 /* NSArray+RSSItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA67180CB934007C9015 /* NSArray+RSSItemCollection.m */; };
 		319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
 		319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
 		319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0677180B2ABC00943567 /* CoreGraphics.framework */; };
@@ -80,6 +81,8 @@
 		314DFA60180BD232007C9015 /* SHZNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHZNetworkManager.m; sourceTree = "<group>"; };
 		314DFA63180BD6E2007C9015 /* NSURLRequest+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Common.h"; sourceTree = "<group>"; };
 		314DFA64180BD6E2007C9015 /* NSURLRequest+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Common.m"; sourceTree = "<group>"; };
+		314DFA66180CB934007C9015 /* NSArray+RSSItemCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+RSSItemCollection.h"; sourceTree = "<group>"; };
+		314DFA67180CB934007C9015 /* NSArray+RSSItemCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+RSSItemCollection.m"; sourceTree = "<group>"; };
 		319F0670180B2ABC00943567 /* ShazamTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319F0673180B2ABC00943567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		319F0675180B2ABC00943567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -224,6 +227,8 @@
 				314DFA5A180BC9FF007C9015 /* NSString+Common.m */,
 				314DFA63180BD6E2007C9015 /* NSURLRequest+Common.h */,
 				314DFA64180BD6E2007C9015 /* NSURLRequest+Common.m */,
+				314DFA66180CB934007C9015 /* NSArray+RSSItemCollection.h */,
+				314DFA67180CB934007C9015 /* NSArray+RSSItemCollection.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				314DFA5E180BCB75007C9015 /* SHZWebViewController.m in Sources */,
 				314DFA61180BD233007C9015 /* SHZNetworkManager.m in Sources */,
 				314DFA65180BD6E2007C9015 /* NSURLRequest+Common.m in Sources */,
+				314DFA68180CB935007C9015 /* NSArray+RSSItemCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
