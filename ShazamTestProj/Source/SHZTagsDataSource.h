@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 typedef void (^fetchTagsCompletionBlock)(BOOL finished, NSArray *tags);
 
 

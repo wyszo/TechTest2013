@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface SHZRSSItem : NSObject
 
 @property (nonatomic, copy, readonly) NSString *title;

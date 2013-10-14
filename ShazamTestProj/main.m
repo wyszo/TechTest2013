@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "SHZAppDelegate.h"
 
 int main(int argc, char *argv[])
