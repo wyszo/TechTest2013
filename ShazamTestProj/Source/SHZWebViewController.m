@@ -7,6 +7,7 @@
 //
 
 #import "SHZWebViewController.h"
+#import "NSURLRequest+Common.h"
 
 @interface SHZWebViewController ()
 
@@ -25,13 +26,8 @@
 
 - (void) displayContentsOfURL:(NSString *)url {
     
-    if (_url.length > 0) {
-        
-        NSURL *url = [NSURL URLWithString:_url];
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-        
-        [_webView loadRequest:request];
-    }
+    NSURLRequest *request = [NSURLRequest urlRequestWithURLString:_url];
+    [_webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning

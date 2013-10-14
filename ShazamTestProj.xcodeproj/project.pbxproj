@@ -24,6 +24,8 @@
 		314DFA58180BC77A007C9015 /* NSString+Concatenation.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA57180BC77A007C9015 /* NSString+Concatenation.m */; };
 		314DFA5B180BC9FF007C9015 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA5A180BC9FF007C9015 /* NSString+Common.m */; };
 		314DFA5E180BCB75007C9015 /* SHZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA5D180BCB75007C9015 /* SHZWebViewController.m */; };
+		314DFA61180BD233007C9015 /* SHZNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA60180BD232007C9015 /* SHZNetworkManager.m */; };
+		314DFA65180BD6E2007C9015 /* NSURLRequest+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA64180BD6E2007C9015 /* NSURLRequest+Common.m */; };
 		319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
 		319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
 		319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0677180B2ABC00943567 /* CoreGraphics.framework */; };
@@ -74,6 +76,10 @@
 		314DFA5A180BC9FF007C9015 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		314DFA5C180BCB75007C9015 /* SHZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHZWebViewController.h; sourceTree = "<group>"; };
 		314DFA5D180BCB75007C9015 /* SHZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHZWebViewController.m; sourceTree = "<group>"; };
+		314DFA5F180BD231007C9015 /* SHZNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHZNetworkManager.h; sourceTree = "<group>"; };
+		314DFA60180BD232007C9015 /* SHZNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHZNetworkManager.m; sourceTree = "<group>"; };
+		314DFA63180BD6E2007C9015 /* NSURLRequest+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Common.h"; sourceTree = "<group>"; };
+		314DFA64180BD6E2007C9015 /* NSURLRequest+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Common.m"; sourceTree = "<group>"; };
 		319F0670180B2ABC00943567 /* ShazamTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319F0673180B2ABC00943567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		319F0675180B2ABC00943567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +132,7 @@
 				314DFA3C180B3240007C9015 /* Model */,
 				314DFA50180BB035007C9015 /* Categories */,
 				314DFA54180BB4AA007C9015 /* RSS Parser */,
+				314DFA62180BD25C007C9015 /* Network Manager */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -215,6 +222,8 @@
 				314DFA57180BC77A007C9015 /* NSString+Concatenation.m */,
 				314DFA59180BC9FF007C9015 /* NSString+Common.h */,
 				314DFA5A180BC9FF007C9015 /* NSString+Common.m */,
+				314DFA63180BD6E2007C9015 /* NSURLRequest+Common.h */,
+				314DFA64180BD6E2007C9015 /* NSURLRequest+Common.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -237,6 +246,15 @@
 				6C5AC6D96B0D1D1604FCD8B0 /* SHZRSSMutableItem.h */,
 			);
 			name = RSSItem;
+			sourceTree = "<group>";
+		};
+		314DFA62180BD25C007C9015 /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				314DFA5F180BD231007C9015 /* SHZNetworkManager.h */,
+				314DFA60180BD232007C9015 /* SHZNetworkManager.m */,
+			);
+			name = "Network Manager";
 			sourceTree = "<group>";
 		};
 		319F0667180B2ABC00943567 = {
@@ -438,6 +456,8 @@
 				314DFA58180BC77A007C9015 /* NSString+Concatenation.m in Sources */,
 				314DFA5B180BC9FF007C9015 /* NSString+Common.m in Sources */,
 				314DFA5E180BCB75007C9015 /* SHZWebViewController.m in Sources */,
+				314DFA61180BD233007C9015 /* SHZNetworkManager.m in Sources */,
+				314DFA65180BD6E2007C9015 /* NSURLRequest+Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

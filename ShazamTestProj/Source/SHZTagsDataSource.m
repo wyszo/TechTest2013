@@ -9,7 +9,9 @@
 #import "SHZTagsDataSource.h"
 #import "SHZRSSParser.h"
 #import "SHZRSSItem.h"
+#import "SHZNetworkManager.h"
 
+static NSString *const kShazamRSSFeedURL = @"http://www.shazam.com/music/web/taglistrss?mode=xml&userName=shazam";
 static NSString *const kXMLTestFileName = @"taglistrss_test1";
 
 
@@ -28,8 +30,41 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
     
     // for testing
 //    [self fillTagsWithTestDataCompletion:completionBlock];
-    [self fillTagsWithTestFile1DataCompletion:completionBlock];
+//    [self fillTagsWithTestFile1DataCompletion:completionBlock];
+    [self fillTagsWithNetworkRSSFeedCompletion:completionBlock];
 }
+
+
+#pragma mark - Tags parsing
+
+- (NSArray *) parseRSSData:(NSData *)rssData {
+
+    SHZRSSParser *rssParser = [SHZRSSParser new];
+    NSArray *tags = [rssParser parseData:rssData];
+
+    return tags;
+}
+
+
+#pragma mark - RSS Feed Fetching
+
+- (void) fillTagsWithNetworkRSSFeedCompletion:(fetchTagsCompletionBlock)completionBlock {
+
+    SHZNetworkManager *networkManager = [[SHZNetworkManager alloc] init];
+    __weak SHZTagsDataSource *weakSelf = self;
+
+    [networkManager asyncFetchRSSFeedWithURLString:kShazamRSSFeedURL completion:^(BOOL success, NSData *rssFeed) {
+
+        DLog(@"Network RSS Feed fetching success: %d", success);
+        NSArray *tags = [weakSelf parseRSSData:rssFeed];
+        weakSelf.tags = tags;
+
+        completionBlock(YES, tags);
+    }];
+}
+
+
+#pragma mark - Test methods
 
 - (void) fillTagsWithTestDataCompletion:(fetchTagsCompletionBlock)completionBlock {
 
@@ -44,9 +79,7 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:kXMLTestFileName ofType:@"xml"];
     NSData *xmlData = [NSData dataWithContentsOfFile:filePath];
 
-    SHZRSSParser *rssParser = [SHZRSSParser new];
-    NSArray *tags = [rssParser parseData:xmlData];
-    self.tags = tags;
+    self.tags = [self parseRSSData:xmlData];
 
     completionBlock(YES, _tags);
 }
