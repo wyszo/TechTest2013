@@ -10,6 +10,8 @@
 #import "SHZTagsDataSource.h"
 #import "UIImage+CommonImages.h"
 
+static NSString *const kViewTitle = @"Shazam tags";
+static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 
 
 @interface SHZViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -25,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = kViewTitle;
     
     self.tagsDataSource = [SHZTagsDataSource new];
     [self fetchTags];
@@ -86,7 +90,18 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+
+    // TODO: perform Segue only if URL is filled
+    [self performSegueWithIdentifier:kWebViewSegueIdentifier sender:self];
+}
+
+
+#pragma mark - Segues 
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    [super prepareForSegue:segue sender:sender];
+
     // TODO: bring up a corresponding webpage
 }
 
