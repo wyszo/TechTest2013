@@ -40,6 +40,24 @@
     return [[self alloc] initWithTitle:title trackName:trackName trackArtist:trackArtist link:link];
 }
 
+- (id) initWithRSSItem:(SHZRSSItem *)other {
+    
+    self = [super init];
+    if (self) {
+        self.title = other.title;
+        self.trackName = other.trackName;
+        self.trackArtist = other.trackArtist;
+        self.link = other.link;
+    }
+    
+    return self;
+}
+
++ (id) rssItemWithRSSItem:(SHZRSSItem *)other {
+    
+    return [[self alloc] initWithRSSItem:other];
+}
+
 
 #pragma mark - Accessors
 

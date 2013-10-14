@@ -87,10 +87,10 @@ static NSString *const kLinkElementName = @"link";
         DLog(@"%@ closing tag found, adding new RSSItem", kItemTagName);
         _insideItemElement = NO;
 
-        // TODO: save RSSItem, instead of RSSMutableItem
+        SHZRSSItem *newRSSItem = [[SHZRSSItem alloc] initWithRSSItem:_rssItem]; // dropping mutability
 
-        if (_rssItem != nil) {
-            [_rssItems addObject:_rssItem];
+        if (newRSSItem != nil) {
+            [_rssItems addObject:newRSSItem];
         }
     }
 }

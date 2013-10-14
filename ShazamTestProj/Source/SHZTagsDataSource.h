@@ -20,4 +20,5 @@ typedef void (^fetchTagsCompletionBlock)(BOOL finished, NSArray *tags);
  */
 - (void) fetchTagsCompletion:(fetchTagsCompletionBlock)completionBlock;
 
+
 @end

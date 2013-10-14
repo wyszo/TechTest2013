@@ -18,4 +18,7 @@
 - (id) initWithTitle:(NSString *)title trackName:(NSString *)trackName trackArtist:(NSString *)trackArtist link:(NSString *)link;
 + (id) rssItemWithTitle:(NSString *)title trackName:(NSString *)trackName trackArtist:(NSString *)trackArtist link:(NSString *)link;
 
+- (id) initWithRSSItem:(SHZRSSItem *)other;
++ (id) rssItemWithRSSItem:(SHZRSSItem *)other;
+
 @end
