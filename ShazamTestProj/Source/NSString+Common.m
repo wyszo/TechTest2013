@@ -10,8 +10,8 @@
 
 @implementation NSString (Common)
 
-- (NSString *) stringByRemovingNewlineCharacters {
-    return [self stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+- (NSString *) stringByTrimmingWhitespaceAndNewline {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end

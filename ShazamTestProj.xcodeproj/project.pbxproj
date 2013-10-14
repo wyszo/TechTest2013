@@ -23,6 +23,7 @@
 		314DFA53180BB4A6007C9015 /* SHZRSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA52180BB4A5007C9015 /* SHZRSSParser.m */; };
 		314DFA58180BC77A007C9015 /* NSString+Concatenation.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA57180BC77A007C9015 /* NSString+Concatenation.m */; };
 		314DFA5B180BC9FF007C9015 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA5A180BC9FF007C9015 /* NSString+Common.m */; };
+		314DFA5E180BCB75007C9015 /* SHZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA5D180BCB75007C9015 /* SHZWebViewController.m */; };
 		319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
 		319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
 		319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0677180B2ABC00943567 /* CoreGraphics.framework */; };
@@ -71,6 +72,8 @@
 		314DFA57180BC77A007C9015 /* NSString+Concatenation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Concatenation.m"; sourceTree = "<group>"; };
 		314DFA59180BC9FF007C9015 /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
 		314DFA5A180BC9FF007C9015 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
+		314DFA5C180BCB75007C9015 /* SHZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHZWebViewController.h; sourceTree = "<group>"; };
+		314DFA5D180BCB75007C9015 /* SHZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHZWebViewController.m; sourceTree = "<group>"; };
 		319F0670180B2ABC00943567 /* ShazamTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319F0673180B2ABC00943567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		319F0675180B2ABC00943567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,6 +162,8 @@
 			children = (
 				314DFA2B180B2CE2007C9015 /* SHZViewController.h */,
 				314DFA2C180B2CE2007C9015 /* SHZViewController.m */,
+				314DFA5C180BCB75007C9015 /* SHZWebViewController.h */,
+				314DFA5D180BCB75007C9015 /* SHZWebViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				6C5AC7D652807EC2D419183D /* SHZRSSMutableItem.m in Sources */,
 				314DFA58180BC77A007C9015 /* NSString+Concatenation.m in Sources */,
 				314DFA5B180BC9FF007C9015 /* NSString+Common.m in Sources */,
+				314DFA5E180BCB75007C9015 /* SHZWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

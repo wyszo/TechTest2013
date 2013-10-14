@@ -49,7 +49,7 @@
         
         NSString *processedLink = link;
         if (processedLink.length > 0) {
-            processedLink = [processedLink stringByRemovingNewlineCharacters];
+            processedLink = [processedLink stringByTrimmingWhitespaceAndNewline];
         }
         
         _link = processedLink;

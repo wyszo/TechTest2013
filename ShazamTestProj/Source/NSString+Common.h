@@ -10,6 +10,6 @@
 
 @interface NSString (Common)
 
-- (NSString *) stringByRemovingNewlineCharacters;
+- (NSString *) stringByTrimmingWhitespaceAndNewline;
 
 @end

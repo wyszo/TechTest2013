@@ -10,6 +10,7 @@
 #import "SHZTagsDataSource.h"
 #import "UIImage+CommonImages.h"
 #import "SHZRSSItem.h"
+#import "SHZWebViewController.h"
 
 static NSString *const kViewTitle = @"Shazam tags";
 static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
@@ -19,6 +20,7 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 
 @property (weak, nonatomic, readwrite) IBOutlet UITableView *tagsTableView;
 @property (strong, nonatomic) SHZTagsDataSource *tagsDataSource;
+@property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
 
 @end
 
@@ -78,21 +80,39 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 
 - (void) configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     
+    SHZRSSItem *rssItem = [self rssItemForIndexPath:indexPath];
+    
+    if (rssItem) {
+        cell.textLabel.text = rssItem.title;
+    }
+    
+    cell.imageView.image = [UIImage feedIcon];
+}
+
+- (SHZRSSItem *) rssItemForIndexPath:(NSIndexPath *)indexPath {
+    
+    SHZRSSItem *rssItem = nil;
+    
     if ([_tagsDataSource.tags count] > indexPath.row) {
-
+        
         id dataSourceObject = _tagsDataSource.tags[indexPath.row];
-
+        
         if ([dataSourceObject isKindOfClass:[SHZRSSItem class]] == NO) {
             DLog(@"Unexpected DataSource object class!");
         }
         else {
-
-            SHZRSSItem *rssItem = (SHZRSSItem *)dataSourceObject;
-            cell.textLabel.text = rssItem.title;
+            rssItem = (SHZRSSItem *)dataSourceObject;
         }
-
-        cell.imageView.image = [UIImage feedIcon];
     }
+    return rssItem;
+}
+
+- (NSString *) urlFromRSSItemForIndexPath:(NSIndexPath *)indexPath {
+    
+    SHZRSSItem *rssItem = [self rssItemForIndexPath:indexPath];
+    NSString *url = rssItem.link;
+    
+    return url;
 }
 
 
@@ -101,9 +121,11 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    _lastSelectedIndexPath = indexPath;
 
-    // TODO: perform Segue only if URL is filled
-    [self performSegueWithIdentifier:kWebViewSegueIdentifier sender:self];
+    if ([self urlFromRSSItemForIndexPath:indexPath].length > 0) {
+        [self performSegueWithIdentifier:kWebViewSegueIdentifier sender:self];
+    }
 }
 
 
@@ -113,7 +135,11 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 
     [super prepareForSegue:segue sender:sender];
 
-    // TODO: bring up a corresponding webpage
+    if ([segue.destinationViewController isKindOfClass:[SHZWebViewController class]]) {
+        
+        SHZWebViewController *webViewController = (SHZWebViewController *)segue.destinationViewController;
+        webViewController.url = [self urlFromRSSItemForIndexPath:_lastSelectedIndexPath];
+    }
 }
 
 
