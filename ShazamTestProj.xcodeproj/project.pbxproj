@@ -13,6 +13,13 @@
 		314DFA34180B2CFA007C9015 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA31180B2CFA007C9015 /* Default.png */; };
 		314DFA35180B2CFA007C9015 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA32180B2CFA007C9015 /* Default@2x.png */; };
 		314DFA3B180B323D007C9015 /* SHZTagsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA3A180B323D007C9015 /* SHZTagsDataSource.m */; };
+		314DFA41180BA7B2007C9015 /* taglistrss_test1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA40180BA7B2007C9015 /* taglistrss_test1.xml */; };
+		314DFA42180BA7B2007C9015 /* taglistrss_test1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA40180BA7B2007C9015 /* taglistrss_test1.xml */; };
+		314DFA45180BA84D007C9015 /* SHZRSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA44180BA84D007C9015 /* SHZRSSItem.m */; };
+		314DFA46180BA84D007C9015 /* SHZRSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA44180BA84D007C9015 /* SHZRSSItem.m */; };
+		314DFA49180BAA31007C9015 /* Generic_Feed-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA47180BAA31007C9015 /* Generic_Feed-icon.png */; };
+		314DFA4A180BAA31007C9015 /* Generic_Feed-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA48180BAA31007C9015 /* Generic_Feed-icon@2x.png */; };
+		314DFA4F180BB030007C9015 /* UIImage+CommonImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA4E180BB030007C9015 /* UIImage+CommonImages.m */; };
 		319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
 		319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
 		319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0677180B2ABC00943567 /* CoreGraphics.framework */; };
@@ -47,6 +54,13 @@
 		314DFA32180B2CFA007C9015 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		314DFA39180B323D007C9015 /* SHZTagsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHZTagsDataSource.h; sourceTree = "<group>"; };
 		314DFA3A180B323D007C9015 /* SHZTagsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHZTagsDataSource.m; sourceTree = "<group>"; };
+		314DFA40180BA7B2007C9015 /* taglistrss_test1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = taglistrss_test1.xml; sourceTree = "<group>"; };
+		314DFA43180BA84D007C9015 /* SHZRSSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHZRSSItem.h; sourceTree = "<group>"; };
+		314DFA44180BA84D007C9015 /* SHZRSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHZRSSItem.m; sourceTree = "<group>"; };
+		314DFA47180BAA31007C9015 /* Generic_Feed-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Generic_Feed-icon.png"; sourceTree = "<group>"; };
+		314DFA48180BAA31007C9015 /* Generic_Feed-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Generic_Feed-icon@2x.png"; sourceTree = "<group>"; };
+		314DFA4D180BB030007C9015 /* UIImage+CommonImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CommonImages.h"; sourceTree = "<group>"; };
+		314DFA4E180BB030007C9015 /* UIImage+CommonImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CommonImages.m"; sourceTree = "<group>"; };
 		319F0670180B2ABC00943567 /* ShazamTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319F0673180B2ABC00943567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		319F0675180B2ABC00943567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +109,7 @@
 				314DFA37180B2DBC007C9015 /* AppDelegate */,
 				314DFA38180B2DC3007C9015 /* View Controllers */,
 				314DFA3C180B3240007C9015 /* Model */,
+				314DFA50180BB035007C9015 /* Categories */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -102,9 +117,8 @@
 		314DFA2F180B2CFA007C9015 /* GraphicsResources */ = {
 			isa = PBXGroup;
 			children = (
-				314DFA30180B2CFA007C9015 /* Default-568h@2x.png */,
-				314DFA31180B2CFA007C9015 /* Default.png */,
-				314DFA32180B2CFA007C9015 /* Default@2x.png */,
+				314DFA4C180BAA43007C9015 /* Default */,
+				314DFA4B180BAA39007C9015 /* Feed Icon */,
 			);
 			path = GraphicsResources;
 			sourceTree = "<group>";
@@ -141,8 +155,47 @@
 			children = (
 				314DFA39180B323D007C9015 /* SHZTagsDataSource.h */,
 				314DFA3A180B323D007C9015 /* SHZTagsDataSource.m */,
+				314DFA43180BA84D007C9015 /* SHZRSSItem.h */,
+				314DFA44180BA84D007C9015 /* SHZRSSItem.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		314DFA3F180BA7B2007C9015 /* XMLs */ = {
+			isa = PBXGroup;
+			children = (
+				314DFA40180BA7B2007C9015 /* taglistrss_test1.xml */,
+			);
+			name = XMLs;
+			path = TestXMLs;
+			sourceTree = "<group>";
+		};
+		314DFA4B180BAA39007C9015 /* Feed Icon */ = {
+			isa = PBXGroup;
+			children = (
+				314DFA47180BAA31007C9015 /* Generic_Feed-icon.png */,
+				314DFA48180BAA31007C9015 /* Generic_Feed-icon@2x.png */,
+			);
+			name = "Feed Icon";
+			sourceTree = "<group>";
+		};
+		314DFA4C180BAA43007C9015 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				314DFA30180B2CFA007C9015 /* Default-568h@2x.png */,
+				314DFA31180B2CFA007C9015 /* Default.png */,
+				314DFA32180B2CFA007C9015 /* Default@2x.png */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		314DFA50180BB035007C9015 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				314DFA4D180BB030007C9015 /* UIImage+CommonImages.h */,
+				314DFA4E180BB030007C9015 /* UIImage+CommonImages.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		319F0667180B2ABC00943567 = {
@@ -182,6 +235,7 @@
 				314DFA36180B2D1A007C9015 /* Storyboards */,
 				319F067A180B2ABC00943567 /* Supporting Files */,
 				314DFA2F180B2CFA007C9015 /* GraphicsResources */,
+				314DFA3F180BA7B2007C9015 /* XMLs */,
 			);
 			path = ShazamTestProj;
 			sourceTree = "<group>";
@@ -294,6 +348,9 @@
 				314DFA33180B2CFA007C9015 /* Default-568h@2x.png in Resources */,
 				314DFA34180B2CFA007C9015 /* Default.png in Resources */,
 				314DFA35180B2CFA007C9015 /* Default@2x.png in Resources */,
+				314DFA41180BA7B2007C9015 /* taglistrss_test1.xml in Resources */,
+				314DFA49180BAA31007C9015 /* Generic_Feed-icon.png in Resources */,
+				314DFA4A180BAA31007C9015 /* Generic_Feed-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				319F06A5180B2ABD00943567 /* InfoPlist.strings in Resources */,
+				314DFA42180BA7B2007C9015 /* taglistrss_test1.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +390,8 @@
 				314DFA2D180B2CE2007C9015 /* SHZAppDelegate.m in Sources */,
 				314DFA2E180B2CE2007C9015 /* SHZViewController.m in Sources */,
 				314DFA3B180B323D007C9015 /* SHZTagsDataSource.m in Sources */,
+				314DFA45180BA84D007C9015 /* SHZRSSItem.m in Sources */,
+				314DFA4F180BB030007C9015 /* UIImage+CommonImages.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				319F06A8180B2ABD00943567 /* ShazamTestProjTests.m in Sources */,
+				314DFA46180BA84D007C9015 /* SHZRSSItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

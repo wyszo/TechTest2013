@@ -8,6 +8,9 @@
 
 #import "SHZViewController.h"
 #import "SHZTagsDataSource.h"
+#import "UIImage+CommonImages.h"
+
+
 
 @interface SHZViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -65,11 +68,15 @@
     return cell;
 }
 
+
+#pragma mark - TableViewCell Customisation
+
 - (void) configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     
     if ([_tagsDataSource.tags count] > indexPath.row) {
 
         cell.textLabel.text = _tagsDataSource.tags[indexPath.row];
+        cell.imageView.image = [UIImage feedIcon];
     }
 }
 

@@ -1,0 +1,42 @@
+//
+//  SHZRSSItem.m
+//  ShazamTestProj
+//
+//  Created by Wyszo on 10/14/13.
+//  Copyright (c) 2013 Wyszo. All rights reserved.
+//
+
+#import "SHZRSSItem.h"
+
+
+@interface SHZRSSItem ()
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *trackName;
+@property (nonatomic, copy) NSString *trackArtist;
+@property (nonatomic, copy) NSString *link;
+
+@end
+
+
+@implementation SHZRSSItem
+
+- (id) initWithTitle:(NSString *)title trackName:(NSString *)trackName trackArtist:(NSString *)trackArtist link:(NSString *)link {
+
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.trackName = trackName;
+        self.trackArtist = trackArtist;
+        self.link = link;
+    }
+
+    return self;
+}
+
++ (id) rssItemWithTitle:(NSString *)title trackName:(NSString *)trackName trackArtist:(NSString *)trackArtist link:(NSString *)link {
+
+    return [[self alloc] initWithTitle:title trackName:trackName trackArtist:trackArtist link:link];
+}
+
+@end
