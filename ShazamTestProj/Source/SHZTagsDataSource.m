@@ -7,6 +7,10 @@
 //
 
 #import "SHZTagsDataSource.h"
+#import "SHZRSSParser.h"
+
+static NSString *const kXMLTestFileName = @"taglistrss_test1";
+
 
 @interface SHZTagsDataSource ()
 
@@ -22,12 +26,25 @@
     // TODO: Not implemented yet
     
     // for testing
-    [self fillTagsWithTestDataCompletion:completionBlock];
+//    [self fillTagsWithTestDataCompletion:completionBlock];
+    [self fillTagsWithTestFile1DataCompletion:completionBlock];
 }
 
 - (void) fillTagsWithTestDataCompletion:(fetchTagsCompletionBlock)completionBlock {
     
     self.tags = @[ @"test 1", @"test 2" ];
+    completionBlock(YES, _tags);
+}
+
+- (void) fillTagsWithTestFile1DataCompletion:(fetchTagsCompletionBlock)completionBlock {
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:kXMLTestFileName ofType:@"xml"];
+    NSData *xmlData = [NSData dataWithContentsOfFile:filePath];
+
+    SHZRSSParser *rssParser = [SHZRSSParser new];
+    NSArray *tags = [rssParser parseData:xmlData];
+    self.tags = tags;
+
     completionBlock(YES, _tags);
 }
 
