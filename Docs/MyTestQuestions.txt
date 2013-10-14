@@ -1,13 +1,17 @@
+Here's list of questions that would normally be asked to Team Leader/Technical Architect/Project Manager/whoever responsible. 
+
+For this assignment I just assumed I should use default SDK constructs whenever possible and go along with 'standard', modern practices. Let me know if you want me to change any of the assumptions. 
+
 My questions: 
-- what type of memory management should I use? MRC or ARC? 
-- what's the deployment target? Can I go iOS7 only? 
-- am I allowed to use external RSS reading library or should I rely on XML parsing? 
-- should I use native XML parsing abilities or rather custom XML parsing library? 
-- am I allowed to use custom library for network requests or should I use the native one? 
+- what type of memory management should I use? MRC or ARC? (ARC assumed)
+- what's the deployment target? (using 6.1)
+- am I allowed to use external RSS reading library or should I rely on XML parsing? (using just pure xml parsing)
+- should I use native XML parsing abilities or rather custom XML parsing library? (using NSXMLParser)
+- am I allowed to use custom library for network requests or should I use the native one? (using just NSURLConnection and sendAsynchronousRequest:queue:completionHandler: method)
 - should I write unit tests for the project? 
-- should I write unit tests first? 
+- should I write unit tests first (before writing code; TDD)? 
 - should I use default or external library (kiwi?) for unit testing? 
 - should I also include behavioral testing?
-- should the app be targeted for iPhone/iPad/both? 
-- should I use storyboards or rather xibs (or maybe layout interface programmatically)? 
-- should the app store cached RSS data from earlier application launches?
+- should the app be targeted for iPhone/iPad/both? (assumed both)
+- should I use storyboards or rather xibs (or maybe layout interface programmatically)? (assumed storyboards are allowed)
+- should the app store cached RSS data from earlier application launches? (assumed it shouldn't)
