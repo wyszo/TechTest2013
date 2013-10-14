@@ -68,7 +68,7 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     [self configureCell:cell forIndexPath:indexPath];
@@ -84,6 +84,7 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     
     if (rssItem) {
         cell.textLabel.text = rssItem.title;
+        cell.detailTextLabel.text = rssItem.trackArtist;
     }
     
     cell.imageView.image = [UIImage feedIcon];
