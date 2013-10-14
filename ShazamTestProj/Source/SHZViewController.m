@@ -9,6 +9,7 @@
 #import "SHZViewController.h"
 #import "SHZTagsDataSource.h"
 #import "UIImage+CommonImages.h"
+#import "SHZRSSItem.h"
 
 static NSString *const kViewTitle = @"Shazam tags";
 static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
@@ -79,7 +80,17 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     
     if ([_tagsDataSource.tags count] > indexPath.row) {
 
-        cell.textLabel.text = _tagsDataSource.tags[indexPath.row];
+        id dataSourceObject = _tagsDataSource.tags[indexPath.row];
+
+        if ([dataSourceObject isKindOfClass:[SHZRSSItem class]] == NO) {
+            DLog(@"Unexpected DataSource object class!");
+        }
+        else {
+
+            SHZRSSItem *rssItem = (SHZRSSItem *)dataSourceObject;
+            cell.textLabel.text = rssItem.title;
+        }
+
         cell.imageView.image = [UIImage feedIcon];
     }
 }
