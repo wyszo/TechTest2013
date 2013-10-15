@@ -13,3 +13,4 @@
 "WebPageError" = "Couldn't load webpage!";
 "InternetDown" = "Internet connection appears to be offline!";
 "RSSFeedError" = "Couldn't download RSS Feed!";
+"TagListEmpty" = "Fetched tag list is empty!";

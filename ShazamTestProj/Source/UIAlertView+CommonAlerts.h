@@ -7,5 +7,6 @@
 + (UIAlertView *) showNewWebPageErrorAlertView;
 + (UIAlertView *) showNewNoInternetAlertView;
 + (UIAlertView *) showRSSFeedFetchingErrorAlertView;
++ (UIAlertView *) showNewEmptyTagListAlertView;
 
 @end

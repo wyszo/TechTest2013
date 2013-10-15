@@ -32,6 +32,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    /**
+     * Perhaps if a tag list has not been fetched correctly last time, we should try to fetch it at least in here
+     */
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

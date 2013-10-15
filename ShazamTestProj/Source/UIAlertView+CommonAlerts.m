@@ -31,6 +31,14 @@
     return alertView;
 }
 
++ (UIAlertView *) showNewEmptyTagListAlertView {
+
+    NSString *error = NSLocalizedString(@"TagListEmpty", nil);
+    
+    UIAlertView *alertView = [self showNewOkAlertViewWithTitle:nil message:error];
+    return alertView;
+}
+
 
 #pragma mark - Common methods
 

@@ -45,7 +45,9 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     [self.tagsDataSource asyncFetchTagsCompletion:^(NSArray *tags, NSError *error) {
 
         if (error == nil) {
+            
             [weakSelf.tagsTableView reloadData];
+            [self checkIfTagListNonempty];
         }
         else {
             if ([error isNoInternetConnectionError]) {
@@ -56,6 +58,13 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
             }
         }
     }];
+}
+
+- (void) checkIfTagListNonempty {
+    
+    if (_tagsDataSource.tags.count == 0) {
+        [UIAlertView showNewEmptyTagListAlertView];
+    }
 }
 
 
