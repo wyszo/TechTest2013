@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
+#import "SHZRSSParseOperation.h"
+
+
 @interface SHZRSSParser : NSObject
 
-- (NSArray *) parseData:(NSData *)xmlData;
+- (void) parseData:(NSData *)xmlData completion:(rssParseCompletionBlock)completionBlock;
 
 @end

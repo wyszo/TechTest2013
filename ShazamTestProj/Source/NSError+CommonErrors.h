@@ -12,6 +12,12 @@ typedef enum {
     RSSFeedErrorCodeInvalidFeedURL
 } RSSFeedErrorCode;
 
+extern NSString *const kXMLParsingErrorDomain;
+
+typedef enum {
+    XMLParsingInvalidXMLErrorCode
+} XMLParsingErrorCode;
+
 
 @interface NSError (CommonErrors)
 

@@ -15,6 +15,7 @@
 
 @interface SHZTagsDataSource ()
 
+@property (nonatomic, strong) SHZRSSParser *rssParser;
 @property (nonatomic, strong) NSArray *tags;
 
 @end
@@ -28,14 +29,14 @@
 }
 
 
-#pragma mark - Tags parsing
+#pragma mark - Accessors
 
-- (NSArray *) parseRSSData:(NSData *)rssData {
-
-    SHZRSSParser *rssParser = [SHZRSSParser new];
-    NSArray *tags = [rssParser parseData:rssData];
+- (SHZRSSParser *) rssParser {
     
-    return tags;
+    if (_rssParser == nil) {
+        _rssParser = [[SHZRSSParser alloc] init];
+    }
+    return _rssParser;
 }
 
 
@@ -51,10 +52,14 @@
         BOOL success = (error != nil);
         DLog(@"Network RSS Feed fetching success: %d", success);
 
-        NSArray *tags = [weakSelf parseRSSData:rssFeed];
-        weakSelf.tags = tags;
-
-        completionBlock(tags, error);
+        [weakSelf.rssParser parseData:rssFeed completion:^(NSArray *tags, NSError *error) {
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                weakSelf.tags = tags;
+                completionBlock(tags, error);
+            }];
+        }];
     }];
 }
 

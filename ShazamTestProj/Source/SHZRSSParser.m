@@ -7,117 +7,42 @@
 //
 
 #import "SHZRSSParser.h"
-#import "SHZRSSMutableItem.h"
-#import "NSString+Concatenation.h"
-
-static NSString *const kItemTagName = @"item";
-
-static NSString *const kTitleElementName = @"title";
-static NSString *const kTrackNameElementName = @"trackName";
-static NSString *const kTrackArtistElementName = @"trackArtist";
-static NSString *const kLinkElementName = @"link";
+#import "SHZRSSParseOperation.h"
+#import "NSError+CommonErrors.h"
 
 
-@interface SHZRSSParser () <NSXMLParserDelegate>
+@interface SHZRSSParser ()
 
-@property (nonatomic, strong) NSXMLParser *xmlParser;
-@property (nonatomic, copy) NSString *currentElement;
-@property (nonatomic, assign) BOOL insideItemElement;
-@property (nonatomic, strong) SHZRSSMutableItem *rssItem;
-
-@property (nonatomic, strong) NSMutableArray *rssItems;
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) NSOperation *parseOperation;
 
 @end
 
 
-/**
-* Technical debt: convert this into NSOperation!
-*/
 @implementation SHZRSSParser
 
-- (NSArray *) parseData:(NSData *)xmlData {
-    
+- (void) parseData:(NSData *)xmlData completion:(rssParseCompletionBlock)completionBlock {
+
     if (xmlData.length == 0) {
         
-        DLog(@"invalid xmlData obejct, returning");
-        return nil;
-    }
-    
-    _rssItems = [NSMutableArray new];
-    
-    self.xmlParser = [[NSXMLParser alloc] initWithData:xmlData];
-    _xmlParser.delegate = self;
-    
-    DLog(@"Parsing xml data..");
-    [_xmlParser parse];
-    
-    // TODO: abort parsing if app goes inactive
-
-    NSArray *result = nil;
-
-    if (_rssItems.count > 0) {
-        result = [NSArray arrayWithArray:_rssItems];
-    }
-    return result;
-}
-
-
-#pragma mark - NSXMLParserDelegate
-
-- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-
-    self.currentElement = elementName;
-    
-    if ([elementName isEqualToString:kItemTagName]) {
+        DLog(@"invalid xmlData object, returning");
         
-        DLog(@"%@ tag found, creating new RSSItem object", kItemTagName);
-        _insideItemElement = YES;
-        
-        _rssItem = [SHZRSSMutableItem new];
+        NSError *error = [NSError errorWithDomain:kXMLParsingErrorDomain code:XMLParsingInvalidXMLErrorCode userInfo:nil];
+        completionBlock(nil, error);
     }
     else {
-        DLog(@"%@ tag found", elementName);
+        
+        _parseOperation = [[SHZRSSParseOperation alloc] initWithXMLData:xmlData completion:completionBlock];
+        [self.operationQueue addOperation:_parseOperation];
     }
 }
 
-- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+- (NSOperationQueue *) operationQueue {
 
-    if ([elementName isEqualToString:kItemTagName]) {
-
-        DLog(@"%@ closing tag found, adding new RSSItem", kItemTagName);
-        _insideItemElement = NO;
-
-        SHZRSSItem *newRSSItem = [[SHZRSSItem alloc] initWithRSSItem:_rssItem]; // dropping mutability
-
-        if (newRSSItem != nil) {
-            [_rssItems addObject:newRSSItem];
-        }
+    if (_operationQueue == nil) {
+        _operationQueue = [[NSOperationQueue alloc] init];
     }
+    return _operationQueue;
 }
-
-- (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-
-    if (_insideItemElement == YES) {
-
-        if ([_currentElement isEqualToString:kTitleElementName]) {
-            _rssItem.title = [NSString safeAppendString:string toString:_rssItem.title];
-        }
-        else if ([_currentElement isEqualToString:kTrackNameElementName]) {
-            _rssItem.trackName = [NSString safeAppendString:string toString:_rssItem.trackName];
-        }
-        else if ([_currentElement isEqualToString:kTrackArtistElementName]) {
-            _rssItem.trackArtist = [NSString safeAppendString:string toString:_rssItem.trackArtist];
-        }
-        else if ([_currentElement isEqualToString:kLinkElementName]) {
-            _rssItem.link = [NSString safeAppendString:string toString:_rssItem.link];
-        }
-    }
-}
-
-- (void) parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-
-    // TODO: implement error handling
-}
-
 
 @end

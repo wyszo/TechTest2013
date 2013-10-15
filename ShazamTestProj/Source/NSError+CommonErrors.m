@@ -9,6 +9,7 @@
 #import "NSError+CommonErrors.h"
 
 NSString *const kRSSFeedErrorDomain = @"RSSFeedErrorDomain";
+NSString *const kXMLParsingErrorDomain = @"XMLParsingErrorDomain";
 
 
 @implementation NSError (CommonErrors)

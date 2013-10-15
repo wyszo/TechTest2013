@@ -17,6 +17,7 @@ const NSUInteger kLastTagIndex = kNumberOfTagsInFile - 1;
 
 @interface ShazamTestProjTests ()
 
+@property (nonatomic, strong) SHZRSSParser *rssParser;
 @property (nonatomic, strong) NSArray *tags;
 
 @end
@@ -42,15 +43,23 @@ const NSUInteger kLastTagIndex = kNumberOfTagsInFile - 1;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:kXMLTestFileName ofType:@"xml"];
     NSData *xmlData = [NSData dataWithContentsOfFile:filePath];
     
-    self.tags = [self parseRSSData:xmlData];
+    [self parseRSSData:xmlData];
 }
 
-- (NSArray *) parseRSSData:(NSData *)rssData {
+- (void) parseRSSData:(NSData *)rssData {
     
-    SHZRSSParser *rssParser = [SHZRSSParser new];
-    NSArray *tags = [rssParser parseData:rssData];
+    _rssParser = [SHZRSSParser new];
+    __weak ShazamTestProjTests *weakSelf = self;
     
-    return tags;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    [_rssParser parseData:rssData completion:^(NSArray *tags, NSError *error) {
+        
+        weakSelf.tags = tags;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
 - (void)tearDown
