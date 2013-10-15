@@ -1,0 +1,14 @@
+/* 
+  Localization.strings
+  ShazamTestProj
+
+  Created by Wyszo on 10/15/13.
+  Copyright (c) 2013 Wyszo. All rights reserved.
+*/
+
+"MainViewName" = "Shazam tags";
+"ButtonOK" = "OK";
+
+// Alerts
+"WebPageError" = "Couldn't load webpage!";
+"InternetDown" = "Internet connection appears to be offline!";

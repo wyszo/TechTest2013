@@ -12,7 +12,6 @@
 #import "NSArray+RSSItemCollection.h"
 #import "SHZWebViewController.h"
 
-static NSString *const kViewTitle = @"Shazam tags";
 static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 
 
@@ -31,7 +30,7 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 {
     [super viewDidLoad];
     
-    self.title = kViewTitle;
+    self.title = NSLocalizedString(@"MainViewName", nil);
     
     self.tagsDataSource = [SHZTagsDataSource new];
     [self fetchTags];

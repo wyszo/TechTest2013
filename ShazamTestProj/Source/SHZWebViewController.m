@@ -8,8 +8,10 @@
 
 #import "SHZWebViewController.h"
 #import "NSURLRequest+Common.h"
+#import "UIAlertView+CommonAlerts.h"
 
-@interface SHZWebViewController ()
+
+@interface SHZWebViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -21,18 +23,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _webView.delegate = self;
     [self displayContentsOfURL:_url];
 }
 
 - (void) displayContentsOfURL:(NSString *)url {
-    
-    NSURLRequest *request = [NSURLRequest urlRequestWithURLString:_url];
+        
+    NSURLRequest *request = [NSURLRequest urlRequestWithURLString:url];
     [_webView loadRequest:request];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+
+#pragma mark - UIWebViewDelegate
+
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+
+    if (error.code == NSURLErrorNotConnectedToInternet) {
+
+        [UIAlertView showNewNoInternetAlertView];
+    }
+    else {
+        [UIAlertView showNewWebPageErrorAlertView];
+    }
 }
+
 
 @end
