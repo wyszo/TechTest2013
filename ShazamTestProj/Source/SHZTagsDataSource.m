@@ -12,8 +12,6 @@
 #import "SHZNetworkManager.h"
 #import "Configuration.h"
 
-static NSString *const kXMLTestFileName = @"taglistrss_test1";
-
 
 @interface SHZTagsDataSource ()
 
@@ -36,7 +34,7 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
 
     SHZRSSParser *rssParser = [SHZRSSParser new];
     NSArray *tags = [rssParser parseData:rssData];
-
+    
     return tags;
 }
 
@@ -60,18 +58,5 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
     }];
 }
 
-
-#pragma mark - Test methods
-
-// TODO: move this to the test project
-- (void) fillTagsWithTestFile1DataCompletion:(fetchTagsCompletionBlock)completionBlock {
-
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:kXMLTestFileName ofType:@"xml"];
-    NSData *xmlData = [NSData dataWithContentsOfFile:filePath];
-
-    self.tags = [self parseRSSData:xmlData];
-
-    completionBlock(_tags, nil);
-}
 
 @end
