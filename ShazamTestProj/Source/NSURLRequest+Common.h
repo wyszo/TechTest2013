@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-
 @interface NSURLRequest (Common)
 
 + (NSURLRequest *) urlRequestWithURLString:(NSString *)urlString;

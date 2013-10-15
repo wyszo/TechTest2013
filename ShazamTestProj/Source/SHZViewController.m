@@ -40,9 +40,9 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     
     __weak SHZViewController *weakSelf = self;
 
-    [self.tagsDataSource fetchTagsCompletion:^(BOOL finished, NSArray *tags) {
+    [self.tagsDataSource asyncFetchTagsCompletion:^(BOOL success, NSArray *tags) {
 
-        if (finished == YES) {
+        if (success == YES) {
             [weakSelf.tagsTableView reloadData];
         }
     }];

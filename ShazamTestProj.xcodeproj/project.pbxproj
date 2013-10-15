@@ -28,6 +28,7 @@
 		314DFA65180BD6E2007C9015 /* NSURLRequest+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA64180BD6E2007C9015 /* NSURLRequest+Common.m */; };
 		314DFA68180CB935007C9015 /* NSArray+RSSItemCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA67180CB934007C9015 /* NSArray+RSSItemCollection.m */; };
 		314DFA6C180D2236007C9015 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 314DFA6A180D2234007C9015 /* Localizable.strings */; };
+		314DFA70180D29F5007C9015 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 314DFA6F180D29F3007C9015 /* Configuration.m */; };
 		319F0674180B2ABC00943567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0673180B2ABC00943567 /* UIKit.framework */; };
 		319F0676180B2ABC00943567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0675180B2ABC00943567 /* Foundation.framework */; };
 		319F0678180B2ABC00943567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319F0677180B2ABC00943567 /* CoreGraphics.framework */; };
@@ -86,6 +87,8 @@
 		314DFA66180CB934007C9015 /* NSArray+RSSItemCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+RSSItemCollection.h"; sourceTree = "<group>"; };
 		314DFA67180CB934007C9015 /* NSArray+RSSItemCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+RSSItemCollection.m"; sourceTree = "<group>"; };
 		314DFA6B180D2236007C9015 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		314DFA6E180D29F2007C9015 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		314DFA6F180D29F3007C9015 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		319F0670180B2ABC00943567 /* ShazamTestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShazamTestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319F0673180B2ABC00943567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		319F0675180B2ABC00943567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +144,7 @@
 				314DFA50180BB035007C9015 /* Categories */,
 				314DFA54180BB4AA007C9015 /* RSS Parser */,
 				314DFA62180BD25C007C9015 /* Network Manager */,
+				314DFA71180D2A00007C9015 /* Configuration */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -275,6 +279,15 @@
 				314DFA6A180D2234007C9015 /* Localizable.strings */,
 			);
 			name = Localization;
+			sourceTree = "<group>";
+		};
+		314DFA71180D2A00007C9015 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				314DFA6E180D29F2007C9015 /* Configuration.h */,
+				314DFA6F180D29F3007C9015 /* Configuration.m */,
+			);
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 		319F0667180B2ABC00943567 = {
@@ -482,6 +495,7 @@
 				314DFA65180BD6E2007C9015 /* NSURLRequest+Common.m in Sources */,
 				314DFA68180CB935007C9015 /* NSArray+RSSItemCollection.m in Sources */,
 				6C5ACBCD3D813AA92DF6F8AA /* UIAlertView+CommonAlerts.m in Sources */,
+				314DFA70180D29F5007C9015 /* Configuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

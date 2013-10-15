@@ -6,17 +6,13 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-typedef void (^fetchTagsCompletionBlock)(BOOL finished, NSArray *tags);
+typedef void (^fetchTagsCompletionBlock)(BOOL success, NSArray *tags);
 
 
 @interface SHZTagsDataSource : NSObject
 
 @property (nonatomic, strong, readonly) NSArray *tags;
 
-/**
- * Asynchronous
- */
-- (void) fetchTagsCompletion:(fetchTagsCompletionBlock)completionBlock;
-
+- (void) asyncFetchTagsCompletion:(fetchTagsCompletionBlock)completionBlock;
 
 @end

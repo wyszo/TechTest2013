@@ -1,7 +1,8 @@
 //
 // Created by Tomasz Wyszomirski on 10/15/13.
 // Copyright (c) 2013 Wyszo. All rights reserved.
-//#import "UIAlertView+CommonAlerts.h"
+
+#import "UIAlertView+CommonAlerts.h"
 
 
 @implementation UIAlertView (CommonAlerts)
@@ -25,7 +26,6 @@
     
     return alertView;
 }
-
 
 
 #pragma mark - Common methods

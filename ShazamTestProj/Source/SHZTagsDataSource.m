@@ -10,8 +10,8 @@
 #import "SHZRSSParser.h"
 #import "SHZRSSItem.h"
 #import "SHZNetworkManager.h"
+#import "Configuration.h"
 
-static NSString *const kShazamRSSFeedURL = @"http://www.shazam.com/music/web/taglistrss?mode=xml&userName=shazam";
 static NSString *const kXMLTestFileName = @"taglistrss_test1";
 
 
@@ -24,10 +24,8 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
 
 @implementation SHZTagsDataSource
 
-- (void) fetchTagsCompletion:(fetchTagsCompletionBlock)completionBlock {
-    
-    // TODO: Not implemented yet
-    
+- (void) asyncFetchTagsCompletion:(fetchTagsCompletionBlock)completionBlock {
+
     // for testing
 //    [self fillTagsWithTestDataCompletion:completionBlock];
 //    [self fillTagsWithTestFile1DataCompletion:completionBlock];
@@ -56,6 +54,7 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
     [networkManager asyncFetchRSSFeedWithURLString:kShazamRSSFeedURL completion:^(BOOL success, NSData *rssFeed) {
 
         DLog(@"Network RSS Feed fetching success: %d", success);
+
         NSArray *tags = [weakSelf parseRSSData:rssFeed];
         weakSelf.tags = tags;
 
