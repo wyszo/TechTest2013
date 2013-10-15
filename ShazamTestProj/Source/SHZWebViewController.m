@@ -9,6 +9,7 @@
 #import "SHZWebViewController.h"
 #import "NSURLRequest+Common.h"
 #import "UIAlertView+CommonAlerts.h"
+#import "NSError+CommonErrors.h"
 
 
 @interface SHZWebViewController () <UIWebViewDelegate>
@@ -39,8 +40,8 @@
 
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
 
-    if (error.code == NSURLErrorNotConnectedToInternet) {
-
+    if ([error isNoInternetConnectionError]) {
+        
         [UIAlertView showNewNoInternetAlertView];
     }
     else {

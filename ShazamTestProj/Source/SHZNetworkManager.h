@@ -6,12 +6,10 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-typedef void (^fetchRSSFeedCompletionBlock)(BOOL success, NSData *rssFeed);
+typedef void (^fetchRSSFeedCompletionBlock)(NSData *rssFeed, NSError *error);
 
 
 @interface SHZNetworkManager : NSObject
-
-// TODO: cancel connections which are no longer needed (on app states transitions)
 
 - (void) asyncFetchRSSFeedWithURLString:(NSString *)urlString completion:(fetchRSSFeedCompletionBlock)completionBlock;
 

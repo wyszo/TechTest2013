@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Wyszo. All rights reserved.
 //
 
-typedef void (^fetchTagsCompletionBlock)(BOOL success, NSArray *tags);
+typedef void (^fetchTagsCompletionBlock)(NSArray *tags, NSError *error);
 
 
 @interface SHZTagsDataSource : NSObject

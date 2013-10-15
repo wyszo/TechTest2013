@@ -26,10 +26,7 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
 
 - (void) asyncFetchTagsCompletion:(fetchTagsCompletionBlock)completionBlock {
 
-    // for testing
-//    [self fillTagsWithTestDataCompletion:completionBlock];
-//    [self fillTagsWithTestFile1DataCompletion:completionBlock];
-    [self fillTagsWithNetworkRSSFeedCompletion:completionBlock];
+    [self fillTagsWithOnlineRSSFeedCompletion:completionBlock];
 }
 
 
@@ -46,33 +43,27 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
 
 #pragma mark - RSS Feed Fetching
 
-- (void) fillTagsWithNetworkRSSFeedCompletion:(fetchTagsCompletionBlock)completionBlock {
+- (void) fillTagsWithOnlineRSSFeedCompletion:(fetchTagsCompletionBlock)completionBlock {
 
     SHZNetworkManager *networkManager = [[SHZNetworkManager alloc] init];
     __weak SHZTagsDataSource *weakSelf = self;
 
-    [networkManager asyncFetchRSSFeedWithURLString:kShazamRSSFeedURL completion:^(BOOL success, NSData *rssFeed) {
+    [networkManager asyncFetchRSSFeedWithURLString:kShazamRSSFeedURL completion:^(NSData *rssFeed, NSError *error) {
 
+        BOOL success = (error != nil);
         DLog(@"Network RSS Feed fetching success: %d", success);
 
         NSArray *tags = [weakSelf parseRSSData:rssFeed];
         weakSelf.tags = tags;
 
-        completionBlock(YES, tags);
+        completionBlock(tags, error);
     }];
 }
 
 
 #pragma mark - Test methods
 
-- (void) fillTagsWithTestDataCompletion:(fetchTagsCompletionBlock)completionBlock {
-
-    SHZRSSItem *sampleItem1 = [[SHZRSSItem alloc] initWithTitle:@"title 1" trackName:@"track 1" trackArtist:@"artist 1" link:nil];
-
-    self.tags = @[ sampleItem1 ];
-    completionBlock(YES, _tags);
-}
-
+// TODO: move this to the test project
 - (void) fillTagsWithTestFile1DataCompletion:(fetchTagsCompletionBlock)completionBlock {
 
     NSString *filePath = [[NSBundle mainBundle] pathForResource:kXMLTestFileName ofType:@"xml"];
@@ -80,7 +71,7 @@ static NSString *const kXMLTestFileName = @"taglistrss_test1";
 
     self.tags = [self parseRSSData:xmlData];
 
-    completionBlock(YES, _tags);
+    completionBlock(_tags, nil);
 }
 
 @end

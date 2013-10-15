@@ -11,6 +11,8 @@
 #import "UIImage+CommonImages.h"
 #import "NSArray+RSSItemCollection.h"
 #import "SHZWebViewController.h"
+#import "NSError+CommonErrors.h"
+#import "UIAlertView+CommonAlerts.h"
 
 static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
 
@@ -40,17 +42,20 @@ static NSString *const kWebViewSegueIdentifier = @"webViewSegue";
     
     __weak SHZViewController *weakSelf = self;
 
-    [self.tagsDataSource asyncFetchTagsCompletion:^(BOOL success, NSArray *tags) {
+    [self.tagsDataSource asyncFetchTagsCompletion:^(NSArray *tags, NSError *error) {
 
-        if (success == YES) {
+        if (error == nil) {
             [weakSelf.tagsTableView reloadData];
         }
+        else {
+            if ([error isNoInternetConnectionError]) {
+                [UIAlertView showNewNoInternetAlertView];
+            }
+            else {
+                [UIAlertView showRSSFeedFetchingErrorAlertView];
+            }
+        }
     }];
-}
-
-- (void) didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 

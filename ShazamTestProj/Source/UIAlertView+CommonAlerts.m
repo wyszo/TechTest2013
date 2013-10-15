@@ -11,9 +11,7 @@
 
     NSString *error = NSLocalizedString(@"WebPageError", nil);
 
-    UIAlertView *alertView = [self okAlertViewWithTitle:nil message:error];
-    [alertView show];
-
+    UIAlertView *alertView = [self showNewOkAlertViewWithTitle:nil message:error];
     return alertView;
 }
 
@@ -21,16 +19,22 @@
 
     NSString *error = NSLocalizedString(@"InternetDown", nil);
     
-    UIAlertView *alertView = [self okAlertViewWithTitle:nil message:error];
-    [alertView show];
-    
+    UIAlertView *alertView = [self showNewOkAlertViewWithTitle:nil message:error];
+    return alertView;
+}
+
++ (UIAlertView *) showRSSFeedFetchingErrorAlertView {
+
+    NSString *error = NSLocalizedString(@"RSSFeedError", nil);
+
+    UIAlertView *alertView = [self showNewOkAlertViewWithTitle:nil message:error];
     return alertView;
 }
 
 
 #pragma mark - Common methods
 
-+ (UIAlertView *) okAlertViewWithTitle:(NSString *)title message:(NSString *)message {
++ (UIAlertView *) showNewOkAlertViewWithTitle:(NSString *)title message:(NSString *)message {
 
     NSString *ok = NSLocalizedString(@"ButtonOK", nil);
 
@@ -40,6 +44,7 @@
                                               cancelButtonTitle:ok
                                               otherButtonTitles:nil];
 
+    [alertView show];
     return alertView;
 }
 

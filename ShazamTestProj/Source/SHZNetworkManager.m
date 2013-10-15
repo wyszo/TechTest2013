@@ -8,6 +8,8 @@
 
 #import "SHZNetworkManager.h"
 #import "NSURLRequest+Common.h"
+#import "NSError+CommonErrors.h"
+
 
 @implementation SHZNetworkManager
 
@@ -16,7 +18,9 @@
     if (urlString.length == 0) {
         
         DLog(@"Empty RSS Feed URL requested!");
-        completionBlock(NO, nil);
+        
+        NSError *error = [NSError errorWithDomain:kRSSFeedErrorDomain code:RSSFeedErrorCodeInvalidFeedURL userInfo:nil];
+        completionBlock(nil, error);
     }
     else {
         
@@ -27,8 +31,7 @@
         
         [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *retrievedData, NSError *error) {
             
-            BOOL success = (error == nil);
-            completionBlock(success, retrievedData);
+            completionBlock(retrievedData, error);
         }];
     }
 }
